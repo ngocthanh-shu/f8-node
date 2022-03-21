@@ -2,9 +2,10 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "nodemon --inspect app.js",
+    "start": "nodemon --inspect src/app.js",
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +25,11 @@
   "homepage": "https://github.com/ngocthanh-shu/f8-node#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "morgan": "^1.10.0",
+    "express-handlebars": "^6.0.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
     "nodemon": "^2.0.15"
   }
 }
