@@ -23,13 +23,24 @@
     "url": "https://github.com/ngocthanh-shu/f8-node/issues"
   },
   "homepage": "https://github.com/ngocthanh-shu/f8-node#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "husky":  {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.0"
   }
 }
