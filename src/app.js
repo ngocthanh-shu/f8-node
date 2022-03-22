@@ -10,12 +10,12 @@ const route = require('./routes/index.route');
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-        app.use(
+app.use(
     express.urlencoded({
         extended: true,
     }),
 );
-    app.use(express.json());
+app.use(express.json());
 
 app.use(morgan('dev'));
 
