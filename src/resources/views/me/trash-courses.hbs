@@ -1,7 +1,7 @@
 <div class="mt-4">
   <div>
-    <h3>My Courses</h3>
-    <a href="/me/trash/courses">Deleted Courses</a>
+    <a href="/me/stored/courses">Courses List</a>
+    <h3>Deleted Courses</h3>
   </div>
 
   <table class="table mt-4">
@@ -18,14 +18,13 @@
         <th scope="row">{{sum @index 1}}</th>
         <td>{{this.name}}</td>
         <td>{{this.createdAt}}</td>
-        <td><a href="/courses/edit/{{this._id}}" class="btn btn-link">Edit</a></td>
+        <td><a href="" class="btn btn-link btn-restore" data-id="{{this._id}}">Restore</a></td>
         <td><a class="btn btn-link" data-bs-toggle="modal" data-bs-target="#delete-course-modal" data-id="{{this._id}}"
             data-name="{{this.name}}">Delete</a></td>
       </tr>
       {{else}}
       <tr>
         <td colspan="5" class="text-center">No courses found.
-          <a href="/courses/create">Create course now.</a>
         </td>
         
       </tr>
@@ -37,6 +36,11 @@
 {{!-- delete hidden form --}}
 <form name="delete-course-form" method="post">
 </form>
+
+{{!-- restore hidden form --}}
+<form name="restore-course-form" method="post">
+</form>
+
 
 {{!-- Confirm delete course --}}
 <div class="modal" id="delete-course-modal" tabindex="-1">
@@ -56,4 +60,4 @@
     </div>
   </div>
 </div>
-<script src="/js/stored-courses.javascript.js"></script>
+<script src="/js/trash-courses.javascript.js"></script>
